@@ -14,3 +14,5 @@ class MenuProvider {
     });
   }
 }
+
+final menuProvider = MenuProvider();
