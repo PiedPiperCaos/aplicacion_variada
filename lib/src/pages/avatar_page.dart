@@ -5,11 +5,11 @@ class AvatarPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('AlertPage'),
+        title: Text('Avatar Page'),
         centerTitle: true,
       ),
       body: Center(
-        child: Text('Alert Page'),
+        child: Text('Avatar Page'),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
