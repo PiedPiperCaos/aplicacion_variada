@@ -1,5 +1,3 @@
-import 'dart:js';
-
 import 'package:flutter/material.dart';
 
 class CardPage extends StatelessWidget {
@@ -13,7 +11,7 @@ class CardPage extends StatelessWidget {
       body: ListView(
         padding: EdgeInsets.all(10.0),
         children: [
-          _cardTipo1(),
+          _cardTipo1(context),
           SizedBox(
             height: 30.0,
           ),
@@ -59,7 +57,7 @@ Widget _cardTipo2() {
   );
 }
 
-Widget _cardTipo1() {
+Widget _cardTipo1(BuildContext context) {
   return Card(
     elevation: 10.0,
     shape: RoundedRectangleBorder(
@@ -86,5 +84,28 @@ Widget _cardTipo1() {
 }
 
 void _mostrarMadrid(BuildContext context) {
-  showDialog(context: context, builder: builder);
+  showDialog(
+      context: context,
+      barrierDismissible: true,
+      builder: (context) {
+        return AlertDialog(
+            content: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            FadeInImage(
+              //  imageErrorBuilder: ,
+              image: NetworkImage(
+                  'https://tejidoselmundo.com/911793-thickbox_default/toalla-de-playa-forma-escudo-real-madrid.jpg'),
+              fadeInDuration: Duration(milliseconds: 200),
+              placeholder: AssetImage('assets/jar-loading.gif'),
+              height: 300,
+              fit: BoxFit.cover,
+            ),
+            Container(
+              padding: EdgeInsets.all(10),
+              child: Text('Hala Madrid'),
+            ),
+          ],
+        ));
+      });
 }
