@@ -48,7 +48,7 @@ class _ListaPageState extends State<ListaPage> {
       ),
     );
   }
-
+0
   _crearLista() {
     return RefreshIndicator(
       onRefresh: obtenerPagina1,
